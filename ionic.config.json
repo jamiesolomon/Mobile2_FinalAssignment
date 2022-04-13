@@ -1,0 +1,7 @@
+{
+  "name": "MobileDev2_FinalAssignment",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
