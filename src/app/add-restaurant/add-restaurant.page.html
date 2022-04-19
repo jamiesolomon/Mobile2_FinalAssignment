@@ -24,7 +24,7 @@
     <ion-label position="stacked">Tags<ion-text></ion-text></ion-label>
     <ion-input [(ngModel)]="tags" placeholder="Separate tags by commas" oninput="handleRestaurantTags(event)"></ion-input>
   </ion-item>
-  <button (click) = "submit()">Confirm Restaurant</button>
+  <button  (click) = "submit() " [routerLink]="['/home']">Confirm Restaurant</button>
 
 
 

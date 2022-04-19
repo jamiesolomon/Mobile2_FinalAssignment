@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Storage } from '@capacitor/storage';
-
+import data from '../data.js';
 @Component({
   selector: 'app-home',
   templateUrl: 'home.page.html',
