@@ -39,6 +39,7 @@ export class HomePage implements OnInit {
     const item = this.info.find(i => i.id === id);
     this.navService.setNavData(item);
     this.router.navigateByUrl('/restaurant-details/' + id);
+    console.log(item);
   }
   async getData() {
     const { value } = await Storage.get({ key: 'restaurants' });
