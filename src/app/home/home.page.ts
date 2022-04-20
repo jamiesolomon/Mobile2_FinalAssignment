@@ -22,11 +22,14 @@ interface restaurantData {
   templateUrl: 'home.page.html',
   styleUrls: ['home.page.scss'],
 })
+
 export class HomePage implements OnInit {
+  name = 'Angular';
+  info: restaurantData[] = data;
+  filterTerm: string;
   restaurants;
   loading = true;
-
-  constructor() {}
+  constructor(private navService: NavServiceService, private router: Router, private navCtrl: NavController) { }
 
   ngOnInit(): void {
     this.getData();
@@ -54,13 +57,10 @@ export class HomePage implements OnInit {
     this.restaurants = this.restaurants.filter((e) => {
       if (e.name === name) {
         return false;
-      } else {
-        return true;
       }
       else {
         return true;
       }
-
     });
     await Storage.set({ key: 'restaurants', value: JSON.stringify(this.restaurants) });
   }

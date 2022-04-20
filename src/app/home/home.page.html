@@ -16,7 +16,8 @@
   <button class="directionsBtn" [routerLink]="['/directions']">
     Directions
   </button>
-  <ng-container *ngIf="!loading">
+  <button class="addRestaurantBtn" [routerLink]="['/about']">About</button>
+  <!-- <ng-container *ngIf="!loading">
     <ng-container *ngFor="let restaurant of restaurants">
       <ion-card>
         <ion-card-header>
@@ -36,4 +37,29 @@
       </ion-card>
     </ng-container>
   </ng-container>
-</ion-content>
+</ion-content> -->
+
+  <ng-container *ngFor="let data of info | filter:filterTerm" collapse="condense">
+    <a class="data" (click)="details(data.id)"> 
+    <ion-card>    
+      <ion-card-header>
+        <ion-card-subtitle>{{data.address}}</ion-card-subtitle>
+        <ion-card-title>{{data.name}}</ion-card-title>
+      </ion-card-header>
+      <ion-card-content>
+        {{data.desc}}
+
+        {{data.desc}}   
+      </ion-card-content>
+      <ion-card-content>
+        Contact number: {{data.number}}
+
+      </ion-card-content>
+        Tags: {{data.cuisine_type}}
+      <ion-card-content>
+        <button class="btnDel"  (click)="delete(data.name)">Delete</button>
+
+      </ion-card-content>
+    </ion-card>
+    </a>
+  </ng-container>

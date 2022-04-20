@@ -9,6 +9,10 @@ const routes: Routes = [
       import('./home/home.module').then((m) => m.HomePageModule),
   },
   {
+    path: 'splash',
+    loadChildren: () => import('./splash/splash.module').then( m => m.SplashPageModule)
+  },
+  {
     path: '',
     redirectTo: 'home',
     pathMatch: 'full',
@@ -22,11 +26,8 @@ const routes: Routes = [
     component: AddRestaurantPage,
   },
   {
-    path: 'restaurant-details',
-    loadChildren: () =>
-      import('./restaurant-details/restaurant-details.module').then(
-        (m) => m.RestaurantDetailsPageModule
-      ),
+    path: 'restaurant-details/:id',
+    loadChildren: () => import('./restaurant-details/restaurant-details.module').then( m => m.RestaurantDetailsPageModule)
   },
   {
     path: 'directions',
@@ -35,6 +36,10 @@ const routes: Routes = [
         (m) => m.DirectionsPageModule
       ),
   },
+  {
+    path: 'about',
+    loadChildren: () => import('./about/about.module').then( m => m.AboutPageModule)
+  }
 ];
 
 @NgModule({
