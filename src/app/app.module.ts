@@ -7,6 +7,8 @@ import { AppRoutingModule } from './app-routing.module';
 // import { Geolocation } from '@awesome-cordova-plugins/geolocation';
 import { Geolocation } from '@ionic-native/geolocation/ngx';
 import { NavServiceService } from './nav-service.service';
+import { SocialSharing } from '@ionic-native/social-sharing/ngx';
+
 
 //need to import storage
 
@@ -17,6 +19,7 @@ import { NavServiceService } from './nav-service.service';
   providers: [
     Geolocation,
     NavServiceService,
+    SocialSharing,
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy },
   ], //add providor for storage
   bootstrap: [AppComponent],

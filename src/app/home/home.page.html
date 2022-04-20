@@ -17,13 +17,34 @@
     Directions
   </button>
   <button class="addRestaurantBtn" [routerLink]="['/about']">About</button>
-  <!-- <ng-container *ngIf="!loading">
+
+  <ng-container *ngFor="let data of info | filter:filterTerm" collapse="condense">
+    <a class="data" (click)="details(data.id)">
+      <ion-card>
+        <ion-card-header>
+          <ion-card-subtitle>{{data.address}}</ion-card-subtitle>
+          <ion-card-title>{{data.name}}</ion-card-title>
+        </ion-card-header>
+        <ion-card-content>
+          {{data.desc}}
+
+          {{data.desc}}
+        </ion-card-content>
+        <ion-card-content>
+          Contact number: {{data.number}}
+        </ion-card-content>
+        Tags: {{data.cuisine_type}}
+        <ion-card-content>
+          <button class="btnDel" (click)="share(data.name, data.address)">Share</button>
+        </ion-card-content>
+      </ion-card>
+    </a>
+  </ng-container>
+  <ng-container *ngIf="!loading">
     <ng-container *ngFor="let restaurant of restaurants">
       <ion-card>
         <ion-card-header>
-          <ion-card-subtitle
-            >{{restaurant.address}}, {{restaurant.city}}</ion-card-subtitle
-          >
+          <ion-card-subtitle>{{restaurant.address}}, {{restaurant.city}}</ion-card-subtitle>
           <ion-card-title>{{restaurant.name}}</ion-card-title>
         </ion-card-header>
         <ion-card-content> {{restaurant.description}} </ion-card-content>
@@ -36,30 +57,4 @@
         </ion-card-content>
       </ion-card>
     </ng-container>
-  </ng-container>
-</ion-content> -->
-
-  <ng-container *ngFor="let data of info | filter:filterTerm" collapse="condense">
-    <a class="data" (click)="details(data.id)"> 
-    <ion-card>    
-      <ion-card-header>
-        <ion-card-subtitle>{{data.address}}</ion-card-subtitle>
-        <ion-card-title>{{data.name}}</ion-card-title>
-      </ion-card-header>
-      <ion-card-content>
-        {{data.desc}}
-
-        {{data.desc}}   
-      </ion-card-content>
-      <ion-card-content>
-        Contact number: {{data.number}}
-
-      </ion-card-content>
-        Tags: {{data.cuisine_type}}
-      <ion-card-content>
-        <button class="btnDel"  (click)="delete(data.name)">Delete</button>
-
-      </ion-card-content>
-    </ion-card>
-    </a>
   </ng-container>
