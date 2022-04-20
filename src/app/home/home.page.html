@@ -13,6 +13,7 @@
     </ion-toolbar>
   </ion-header>
   <button class="addRestaurantBtn" [routerLink]="['/add-restaurant']">Add Restaurant</button>
+  <button class="addRestaurantBtn" [routerLink]="['/about']">About</button>
   <ng-container *ngIf="!loading">
     <ng-container *ngFor="let restaurant of restaurants">
       
