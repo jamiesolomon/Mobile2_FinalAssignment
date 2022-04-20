@@ -12,8 +12,13 @@
       <ion-title size="large">Restaurants</ion-title>
     </ion-toolbar>
   </ion-header>
+<<<<<<< HEAD
   <button class="btn" [routerLink]="['/add-restaurant']">Add Restaurant</button>
   
+=======
+  <button class="addRestaurantBtn" [routerLink]="['/add-restaurant']">Add Restaurant</button>
+  <button class="addRestaurantBtn" [routerLink]="['/about']">About</button>
+>>>>>>> 5c0c72b1144987b30f4437f9505bc8547433e5f4
   <ng-container *ngIf="!loading">
     <ng-container *ngFor="let restaurant of restaurants">
       <a class="data" [routerLink]="'/restaurant-details'"> 
