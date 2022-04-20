@@ -11,6 +11,8 @@ declare let google;
 export class DirectionsPage implements AfterViewInit {
   @ViewChild('mapContainer', { static: false }) mapElement;
   public map;
+  public address;
+  public location;
   public opts = {
     center: { lat: 43.653225, lng: -79.383186 },
     zoom: 8,
@@ -19,12 +21,39 @@ export class DirectionsPage implements AfterViewInit {
   constructor(private geo: Geolocation) {}
 
   loadMap() {
-    const map = new google.maps.Map(this.mapElement.nativeElement, this.opts);
+    this.map = new google.maps.Map(this.mapElement.nativeElement, this.opts);
     const mark = new google.maps.Marker({
       position: this.opts.center,
-      map,
+      map: this.map,
       title: 'Current Location',
     });
+    this.geocodeLatLng(this.opts.center);
+  }
+
+  geocodeLatLng(currentPosition) {
+    const geocoder = new google.maps.Geocoder();
+    geocoder
+      .geocode({ location: currentPosition })
+      .then((response) => {
+        if (response.results[0]) {
+          this.address = response.results[0].formatted_address;
+          if (response.results[0].address_components.length > 0) {
+            response.results[0].address_components.forEach((element) => {
+              if (element.types.indexOf('locality') !== -1) {
+                this.location = element.short_name;
+              }
+            });
+          }
+          this.map.setZoom(11);
+          const marker = new google.maps.Marker({
+            position: currentPosition,
+            map: this.map,
+          });
+        } else {
+          window.alert('No results found');
+        }
+      })
+      .catch((e) => window.alert('Geocoder failed due to: ' + e));
   }
 
   ngAfterViewInit(): void {
