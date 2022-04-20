@@ -9,11 +9,11 @@ import { Storage } from '@capacitor/storage';
 })
 export class AddRestaurantPage implements OnInit {
 
-  name: String = "";
-  phoneNumber: String = "";
-  address: String = "";
-  description: String = "";
-  city: String = "";
+  name: String = '';
+  phoneNumber: String = '';
+  address: String = '';
+  description: String = '';
+  city: String = '';
   tags: String[] = [];
 
   restaurants;
@@ -21,15 +21,15 @@ export class AddRestaurantPage implements OnInit {
   constructor() { }
 
   ngOnInit() {
-    this.getData()
+    this.getData();
 
   }
 
   async getData(){
-    var {value} = await Storage.get({key: 'restaurants'})
+    const {value} = await Storage.get({key: 'restaurants'});
 
     if(value){
-      this.restaurants = JSON.parse(value)
+      this.restaurants = JSON.parse(value);
     }
     else{
       this.restaurants = [];
@@ -37,10 +37,10 @@ export class AddRestaurantPage implements OnInit {
 
   }
 
-  
+
 
   handleRestaurantTags(input){
-    this.tags = input.split(",");
+    this.tags = input.split(',');
   }
 
   async submit(){
@@ -48,12 +48,12 @@ export class AddRestaurantPage implements OnInit {
 
     //await Storage.set({key: 'name', value: this.name})
 
-    var restaurant = {name: this.name, address: this.address, city: this.city, phoneNumber: this.phoneNumber, description: this.description, tags: this.tags}
-    this.restaurants.push(restaurant)
-    
-    await Storage.set({key: 'restaurants', value: JSON.stringify(this.restaurants)})
+    const restaurant = {name: this.name, address: this.address, city: this.city, phoneNumber: this.phoneNumber, description: this.description, tags: this.tags};
+    this.restaurants.push(restaurant);
 
-    console.log(this.address, this.city, this.description, this.name, this.tags, this.phoneNumber)
+    await Storage.set({key: 'restaurants', value: JSON.stringify(this.restaurants)});
+
+    console.log(this.address, this.city, this.description, this.name, this.tags, this.phoneNumber);
 
   }
 
