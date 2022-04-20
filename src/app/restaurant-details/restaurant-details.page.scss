@@ -1,0 +1,38 @@
+.content{
+    background-color: white;
+
+}
+.img{
+    margin-bottom: 0%;
+}
+h1{
+    margin-top: 0%;
+    font-size: 25px;
+    font-style: to-upper-case($string: "");
+    background-color: orange;
+    padding: 10px;
+    color: white;
+    text-align: center;
+}
+p{
+    font-size: 13px;
+}
+ion-content{
+    color: white;
+}
+.tags{
+    font-style: italic;
+}
+.phone{
+    margin-top: 0%;
+}
+.address{
+    margin-bottom: 0%;
+}
+.desc{
+    font-size: 14px;
+}
+.back{
+    padding: 5px 50px;
+    text-align: center;
+}

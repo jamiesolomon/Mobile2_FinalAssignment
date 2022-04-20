@@ -4,22 +4,21 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-content>
+<button class="back"  [routerLink]="['/home']" >Back</button>
+<ion-content class="content" [fullscreen]="true">
+  <ion-card>
   <div>
-    <!-- <img src={{restaurant.photo}} alt="Location Image">
-    <h2>{{restaurant.name}}</h2>
-    <p>{{restaurant.address}}</p>
-    <hr/>
-    <p>{{restaurant.desc}}</p>
-    <p>{{restaurant.cuisine_type}}</p>
-    <hr/>
-     -->
      <div>
-       <p>{{info.name}}</p>
-       <p>{{info.address}}</p>
-       <p>{{info.number}}</p>
-       <p>{{info.desc}}</p>
+       <img class="pic" src={{info.photo}}>
+       <h1 class="title">{{info.name}}</h1>
+       <p class="address">{{info.address}}</p>
+       <p class="phone">{{info.number}}</p>
+       <p class="desc">{{info.desc}}</p>
+       <p class="tags">Tags: {{info.cuisine_type}}</p>
     </div>
+    <br>
 
   </div>
+  </ion-card>
+  
 </ion-content>

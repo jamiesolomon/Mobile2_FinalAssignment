@@ -13,7 +13,7 @@ const data = [
   },
   cuisine_type: "Asian",
   operating_hours: {
-    Monday: "5:30 pm - 11:00 pm",
+    Monday: "5:30 pm - 11:00 pm", 
     Tuesday: "5:30 pm - 12:00 am",
     Wednesday: "5:30 pm - 12:00 am",
     Thursday: "5:30 pm - 12:00 am",
