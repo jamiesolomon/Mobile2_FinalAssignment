@@ -37,10 +37,9 @@
     </ng-container>
   </ng-container>
 </ion-content> -->
-
 <ng-container *ngIf="!loading" >
   <ng-container *ngFor="let data of info | filter:filterTerm" collapse="condense">
-    <a class="data" [routerLink]="'../restaurant-details/'+data.id" (click)="getNavData()"> 
+    <a class="data" (click)="details(data.id)"> 
     <ion-card>    
       <ion-card-header>
         <ion-card-subtitle>{{data.address}}</ion-card-subtitle>
