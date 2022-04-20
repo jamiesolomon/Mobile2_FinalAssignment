@@ -1,4 +1,4 @@
-<ion-header [translucent]="true">
+<ion-header [translucent]="true" class="top">
   <ion-toolbar>
     <ion-title>
       Home
@@ -12,12 +12,11 @@
       <ion-title size="large">Restaurants</ion-title>
     </ion-toolbar>
   </ion-header>
-  <button class="addRestaurantBtn" [routerLink]="['/add-restaurant']">Add Restaurant</button>
+  <button class="btn" [routerLink]="['/add-restaurant']">Add Restaurant</button>
+  
   <ng-container *ngIf="!loading">
     <ng-container *ngFor="let restaurant of restaurants">
-      
-      
-
+      <a class="data" [routerLink]="'/restaurant-details'"> 
       <ion-card>
         
         <ion-card-header>
@@ -34,18 +33,39 @@
         </ion-card-content>
         Tags: {{restaurant.tags}}
         <ion-card-content>
-          <button (click)="delete(restaurant.name)">Delete</button>
+          <button class="btnDel" (click)="delete(restaurant.name)">Delete</button>
 
         </ion-card-content>
       </ion-card>
-
+    </a>
     </ng-container>
-
-
-
   </ng-container>
-
-
-
   
 </ion-content>
+
+<ng-container *ngIf="!loading" >
+  <ng-container *ngFor="let data of info" collapse="condense">
+    <a class="data" [routerLink]="'/restaurant-details'"> 
+    <ion-card>
+      
+      <ion-card-header>
+        <ion-card-subtitle>{{data.address}}</ion-card-subtitle>
+        <ion-card-title>{{data.name}}</ion-card-title>
+      </ion-card-header>
+      <ion-card-content>
+        {{data.desc}}
+        
+      </ion-card-content>
+      <ion-card-content>
+        Contact number: {{data.number}}
+
+      </ion-card-content>
+        Tags: {{data.cuisine_type}}
+      <ion-card-content>
+        <button class="btnDel"  (click)="delete(data.name)">Delete</button>
+
+      </ion-card-content>
+    </ion-card>
+    </a>
+
+  </ng-container>

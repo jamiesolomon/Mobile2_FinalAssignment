@@ -1,12 +1,24 @@
 import { Component, OnInit } from '@angular/core';
 import { Storage } from '@capacitor/storage';
-import data from '../data.js';
+import data from "../data.js";
+
+interface restaurantData {  
+  id: Number;  
+  name: String;  
+  address: String;
+  number: Number;  
+  desc: String;
+  cuisine_type: String;  
+}  
+
 @Component({
   selector: 'app-home',
   templateUrl: 'home.page.html',
   styleUrls: ['home.page.scss'],
 })
 export class HomePage implements OnInit{
+  name = 'Angular';
+  info: restaurantData[] = data;
 
   restaurants;
   loading = true;
