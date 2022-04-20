@@ -4,15 +4,20 @@ import { RouteReuseStrategy } from '@angular/router';
 import { IonicModule, IonicRouteStrategy } from '@ionic/angular';
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
-import { NavServiceService } from './nav-service.service';
+
+// import { Geolocation } from '@awesome-cordova-plugins/geolocation';
+import { Geolocation } from '@ionic-native/geolocation/ngx';
 
 //need to import storage
 
 @NgModule({
   declarations: [AppComponent],
   entryComponents: [],
-  imports: [BrowserModule, IonicModule.forRoot(), AppRoutingModule, ],
-  providers: [{ provide: RouteReuseStrategy, useClass: IonicRouteStrategy}, NavServiceService], //add providor for storage
+  imports: [BrowserModule, IonicModule.forRoot(), AppRoutingModule],
+  providers: [
+    Geolocation,
+    { provide: RouteReuseStrategy, useClass: IonicRouteStrategy },
+  ], //add providor for storage
   bootstrap: [AppComponent],
 })
 export class AppModule {}
