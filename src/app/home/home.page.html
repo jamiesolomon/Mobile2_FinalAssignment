@@ -12,65 +12,51 @@
       <ion-title size="large">Restaurants</ion-title>
     </ion-toolbar>
   </ion-header>
-<<<<<<< HEAD
-  <button class="btn" [routerLink]="['/add-restaurant']">Add Restaurant</button>
-  
-=======
+  <ion-searchbar placeholder="Search..." [(ngModel)]="filterTerm" animated="true"></ion-searchbar>
   <button class="addRestaurantBtn" [routerLink]="['/add-restaurant']">Add Restaurant</button>
   <button class="addRestaurantBtn" [routerLink]="['/about']">About</button>
->>>>>>> 5c0c72b1144987b30f4437f9505bc8547433e5f4
-  <ng-container *ngIf="!loading">
+
+  <!-- <ng-container *ngIf="!loading">
     <ng-container *ngFor="let restaurant of restaurants">
-      <a class="data" [routerLink]="'/restaurant-details'"> 
-      <ion-card>
-        
+      <ion-card>     
         <ion-card-header>
           <ion-card-subtitle>{{restaurant.address}}, {{restaurant.city}}</ion-card-subtitle>
           <ion-card-title>{{restaurant.name}}</ion-card-title>
         </ion-card-header>
         <ion-card-content>
-          {{restaurant.description}}
-          
+          {{restaurant.description}}     
         </ion-card-content>
         <ion-card-content>
           Contact number: {{restaurant.phoneNumber}}
-
         </ion-card-content>
         Tags: {{restaurant.tags}}
         <ion-card-content>
           <button class="btnDel" (click)="delete(restaurant.name)">Delete</button>
-
         </ion-card-content>
       </ion-card>
-    </a>
     </ng-container>
   </ng-container>
-  
-</ion-content>
+</ion-content> -->
 
 <ng-container *ngIf="!loading" >
-  <ng-container *ngFor="let data of info" collapse="condense">
-    <a class="data" [routerLink]="'/restaurant-details'"> 
-    <ion-card>
-      
+  <ng-container *ngFor="let data of info | filter:filterTerm" collapse="condense">
+    <a class="data" [routerLink]="'../restaurant-details/'+data.id" (click)="getNavData()"> 
+    <ion-card>    
       <ion-card-header>
         <ion-card-subtitle>{{data.address}}</ion-card-subtitle>
         <ion-card-title>{{data.name}}</ion-card-title>
       </ion-card-header>
       <ion-card-content>
-        {{data.desc}}
-        
+        {{data.desc}}   
       </ion-card-content>
       <ion-card-content>
         Contact number: {{data.number}}
-
       </ion-card-content>
         Tags: {{data.cuisine_type}}
       <ion-card-content>
         <button class="btnDel"  (click)="delete(data.name)">Delete</button>
-
       </ion-card-content>
     </ion-card>
     </a>
-
+    
   </ng-container>
