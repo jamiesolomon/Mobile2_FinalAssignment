@@ -3,12 +3,25 @@
     <ion-title>About</ion-title>
   </ion-toolbar>
 </ion-header>
+<ng-container>
+  <ion-content class="body">
+      <ion-icon name="arrow-back-outline" size="medium" class="arrow"[routerLink]="['/home']"></ion-icon>
+      <h2 class="header">Team Members</h2>
+      <p>
+        <ion-icon name="person-outline" size="larger"></ion-icon> Jamie Solomon - 101283673
+      </p>
+      <p>
+        <ion-icon name="person-outline"></ion-icon> Emma Junger - 101292600
+      </p>
+      <p>
+        <ion-icon name="person-outline"></ion-icon> Mariama Ali - 101291481
+      </p>
+      <p>
+        <ion-icon name="person-outline"></ion-icon> Trevon Costa - 101189769
+      </p>
+      <p>
+        <ion-icon name="person-outline"></ion-icon> Sania Rafiq Juddha - 101280640
+      </p>
+    </ion-content>
 
-<ion-content>
-  <button [routerLink]="['/home']" >Back</button>
-<p><ion-icon name="person-outline"></ion-icon> Jamie Solomon</p>
-<p><ion-icon name="person-outline"></ion-icon> Emma Junger</p>
-<p><ion-icon name="person-outline"></ion-icon> Mariama Ali</p>
-<p><ion-icon name="person-outline"></ion-icon> Trevon Costa</p>
-<p><ion-icon name="person-outline"></ion-icon> Sania Rafiq Juddha</p>
-</ion-content>
+</ng-container>

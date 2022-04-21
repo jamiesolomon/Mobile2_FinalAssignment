@@ -1,25 +1,61 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title>Detailed Restaurant View</ion-title>
+    <ion-title>{{info.name}}</ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content>
-  <div>
-    <!-- <img src={{restaurant.photo}} alt="Location Image">
-    <h2>{{restaurant.name}}</h2>
-    <p>{{restaurant.address}}</p>
-    <hr/>
-    <p>{{restaurant.desc}}</p>
-    <p>{{restaurant.cuisine_type}}</p>
-    <hr/>
-     -->
-     <div>
-       <p>{{info.name}}</p>
-       <p>{{info.address}}</p>
-       <p>{{info.number}}</p>
-       <p>{{info.desc}}</p>
-    </div>
+<ion-content class="content" [fullscreen]="true">
+  <ion-icon class="icon" name="arrow-back-outline" [routerLink]="['/home']" size="large"></ion-icon>
 
-  </div>
+  <ion-card class="body">
+    <img class="pic" src={{info.photo}}>
+    <ion-card-content class="content">
+      <ion-card-title class="header">{{info.name}}</ion-card-title>
+      <ion-card-subtitle class="sub">Address</ion-card-subtitle>
+      <ion-card-subtitle class="sub-value">{{info.address}}</ion-card-subtitle>
+      <ion-card-subtitle class="sub">Phone Number</ion-card-subtitle>
+      <ion-card-subtitle class="sub-value">{{info.number}}</ion-card-subtitle>
+      <ion-card-subtitle class="sub">Description</ion-card-subtitle>
+      <ion-card-subtitle class="sub-value">{{info.desc}}</ion-card-subtitle>
+      <ion-card-subtitle class="sub">Cuisine Type </ion-card-subtitle>
+      <ion-card-subtitle class="sub-value">{{info.cuisine_type}}</ion-card-subtitle>
+      <ion-card-subtitle class="sub">Opererating Hours</ion-card-subtitle>
+      <ion-card-subtitle class="sub-value">Monday: {{info.operating_hours.Monday}}</ion-card-subtitle>
+      <ion-card-subtitle class="sub-value">Tuesday: {{info.operating_hours.Tuesday}}</ion-card-subtitle>
+      <ion-card-subtitle class="sub-value">Wednesday: {{info.operating_hours.Wednesday}}</ion-card-subtitle>
+      <ion-card-subtitle class="sub-value">Thursday: {{info.operating_hours.Thursday}}</ion-card-subtitle>
+      <ion-card-subtitle class="sub-value">Friday: {{info.operating_hours.Friday}}</ion-card-subtitle>
+      <ion-card-subtitle class="sub-value">Saturday: {{info.operating_hours.Saturday}}</ion-card-subtitle>
+      <ion-card-subtitle class="sub-value">Sunday: {{info.operating_hours.Sunday}}</ion-card-subtitle>
+
+      <div class="btnDiv">
+        <button class="back" [routerLink]="['/home']" >Back</button>
+      </div>
+
+    </ion-card-content>
+    </ion-card>
+    <ion-card class="body">
+    <ion-card-content class="content">
+      <ion-card-subtitle class="sub">Reviews</ion-card-subtitle>
+      <ion-card-subtitle class="sub-value">Name: {{info.review1.name}}</ion-card-subtitle>
+      <ion-card-subtitle class="sub-value">Date: {{info.review1.date}}</ion-card-subtitle>
+      <ion-card-subtitle class="sub-value">Rating: {{info.review1.rating}}</ion-card-subtitle>
+      <ion-card-subtitle class="sub-value">Comments: {{info.review1.comments}}</ion-card-subtitle>
+      <br>
+      <ion-card-subtitle class="sub-value">Name: {{info.review2.name}}</ion-card-subtitle>
+      <ion-card-subtitle class="sub-value">Date: {{info.review2.date}}</ion-card-subtitle>
+      <ion-card-subtitle class="sub-value">Rating: {{info.review2.rating}}</ion-card-subtitle>
+      <ion-card-subtitle class="sub-value">Comments: {{info.review2.comments}}</ion-card-subtitle>
+      <br>
+      <ion-card-subtitle class="sub-value">Name: {{info.review3.name}}</ion-card-subtitle>
+      <ion-card-subtitle class="sub-value">Date: {{info.review3.date}}</ion-card-subtitle>
+      <ion-card-subtitle class="sub-value">Rating: {{info.review3.rating}}</ion-card-subtitle>
+      <ion-card-subtitle class="sub-value">Comments: {{info.review3.comments}}</ion-card-subtitle>
+
+      <div class="btnDiv">
+        <button class="back" [routerLink]="['/home']" >Back</button>
+      </div>
+      
+  </ion-card-content>
+</ion-card>
 </ion-content>

@@ -1,4 +1,5 @@
-
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300&display=swap');
 #container {
   text-align: center;
   position: absolute;
@@ -8,12 +9,55 @@
   transform: translateY(-50%);
   background-color: blue;
 }
-
+.body{
+  font-family: 'Nunito Sans', sans-serif;
+  margin-bottom: 2rem;
+}
+.sub{
+  margin-top: .6rem;
+  font-weight: bold;
+  text-decoration: underline;
+}
+.header{
+  font-weight: bold;
+  font-size: 1.5rem;
+}
+.sub-value{
+  margin-top: 0;
+  margin-bottom: .6rem;
+}
+.shareBtn{
+  background-color: orange;
+  padding: .7rem;
+  border-radius: 1.1rem;
+  font-size: .8rem;
+  color: white;
+  margin-top: 0;
+}
+.btnDiv{
+  display: flex;
+  justify-content: space-between;
+}
 #container strong {
   font-size: 20px;
   line-height: 26px;
 }
-
+.navbarr{
+  float: right;
+}
+.Btn{
+ display: flex;
+ justify-content: space-between;
+}
+.icon{
+  padding: 1rem;
+}
+.fancy-search {
+  color: white;
+  --icon-color: white;
+  --border-radius: 1rem;
+  --background: var(--charcoal, orange);
+}
 #container p {
   font-size: 16px;
   line-height: 22px;

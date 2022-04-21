@@ -7,6 +7,8 @@ import { Storage } from '@capacitor/storage';
 import { NavController } from '@ionic/angular';
 import data from '../data.js';
 import { NavServiceService } from '../nav-service.service';
+import { SocialSharing } from '@ionic-native/social-sharing/ngx';
+
 
 interface restaurantData {
   id: Number;
@@ -29,7 +31,8 @@ export class HomePage implements OnInit {
   filterTerm: string;
   restaurants;
   loading = true;
-  constructor(private navService: NavServiceService, private router: Router, private navCtrl: NavController) { }
+
+  constructor(private navService: NavServiceService, private router: Router, private socialSharing: SocialSharing) { }
 
   ngOnInit(): void {
     this.getData();
@@ -39,7 +42,17 @@ export class HomePage implements OnInit {
     const item = this.info.find(i => i.id === id);
     this.navService.setNavData(item);
     this.router.navigateByUrl('/restaurant-details/' + id);
-    console.log(item);
+  }
+  async share(name,address){
+    const options = {
+      message: `Wow!! try out ${name}}! Located at: ${address}!`
+    };
+    this.socialSharing.shareVia('Resturant Guide', options.message)
+    .then((res) => {
+      // Success
+    }).catch((e) => {
+      console.log(e);
+    });
   }
   async getData() {
     const { value } = await Storage.get({ key: 'restaurants' });
