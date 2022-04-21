@@ -1,0 +1,23 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300&display=swap');
+.body{
+    font-family: 'Nunito Sans', sans-serif;
+    margin-bottom: 2rem;
+}
+ion-label{
+    font-family: 'Nunito Sans', sans-serif;
+    font-weight: bold;
+}
+ion-input{
+    font-family: 'Nunito Sans', sans-serif;
+    font-size: .9rem;
+}
+.btnDiv{
+    margin-top: 2rem;
+    text-align: center;
+}
+.btn{
+    padding: .5rem;
+    background-color: orange;
+    color: white;
+    border-radius: .5rem;
+}

@@ -39,18 +39,18 @@
   </ng-container>
   <ng-container *ngIf="!loading">
     <ng-container *ngFor="let restaurant of restaurants">
-      <ion-card>
-        <ion-card-header>
-          <ion-card-subtitle>{{restaurant.address}}, {{restaurant.city}}</ion-card-subtitle>
-          <ion-card-title>{{restaurant.name}}</ion-card-title>
-        </ion-card-header>
-        <ion-card-content> {{restaurant.description}} </ion-card-content>
-        <ion-card-content>
-          Contact number: {{restaurant.phoneNumber}}
-        </ion-card-content>
-        Tags: {{restaurant.tags}}
-        <ion-card-content>
-          <button class="btnDel" (click)="delete(restaurant.name)">Delete</button>
+      <ion-card class="body">
+        <ion-card-content class="content">
+          <ion-card-title class="header">{{restaurant.name}}</ion-card-title>
+          <ion-card-subtitle class="sub">Address</ion-card-subtitle>
+          <ion-card-subtitle class="sub-value">{{restaurant.address}}</ion-card-subtitle>
+          <ion-card-subtitle class="sub">Phone Number</ion-card-subtitle>
+          <ion-card-subtitle class="sub-value">{{restaurant.number}}</ion-card-subtitle>
+          <ion-card-subtitle class="sub">Cuisine Type </ion-card-subtitle>
+          <ion-card-subtitle class="sub-value">{{restaurant.cuisine_type}}</ion-card-subtitle>
+          <div class="btnDiv">
+            <button class="btnDel" (click)="delete(restaurant.name)">Delete</button>
+          </div>
         </ion-card-content>
       </ion-card>
     </ng-container>

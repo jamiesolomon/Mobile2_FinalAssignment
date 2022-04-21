@@ -3,7 +3,7 @@
     <ion-title>AddRestaurant</ion-title>
   </ion-toolbar>
 </ion-header>
-
+<!-- 
 <ion-content>
   <button [routerLink]="['/home']" >Back</button>
   <ion-item>
@@ -28,6 +28,35 @@
 
 
 
+</ion-content> -->
+
+<ion-content [fullscreen]="true">
+  <ion-card class="body">
+    <ion-icon name="arrow-back-outline" size="medium" class="arrow"[routerLink]="['/home']"></ion-icon>
+    <ion-card-content class="content">
+      <ion-item>
+        <ion-label position="stacked">Restaurant Name<ion-text></ion-text></ion-label>
+        <ion-input [(ngModel)]="name" placeholder="Name" required type="text"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label position="stacked">Contact Info</ion-label>
+        <ion-input [(ngModel)]="address" placeholder="Address"></ion-input>
+        <ion-input [(ngModel)]="city" placeholder="City"></ion-input>
+        <ion-input [(ngModel)]="phoneNumber" placeholder="Phone Number"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label position="stacked">Description<ion-text></ion-text></ion-label>
+        <ion-input [(ngModel)]="description"  placeholder="Description"required type="text"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label position="stacked">Tags<ion-text></ion-text></ion-label>
+        <ion-input [(ngModel)]="tags" placeholder="Separate by commas" oninput="handleRestaurantTags(event)"></ion-input>
+      </ion-item>
+      <div class="btnDiv">
+        <button class="btn" (click) = "submit() " [routerLink]="['/home']">Confirm Restaurant</button>
+      </div>
+    </ion-card-content>
+  </ion-card>
 </ion-content>
 
 
