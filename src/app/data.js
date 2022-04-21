@@ -130,7 +130,7 @@ const data = [
   number : "416-948-2046",
   desc : "No-frills deli with theatrically cranky service serving mile-high sandwiches since 1888.",
   neighborhood: "Toronto",
-  photo: "https://jewishstudiescolumbia.com/myny/wp-content/uploads/2016/03/Katzs_Delicatessen.jpg",
+  photo: "https://cdn.foodism.to/gallery_small/5f91abde942ad.jpeg",
   latlng: {
     lat: 40.722216,
     lng: -73.987501
