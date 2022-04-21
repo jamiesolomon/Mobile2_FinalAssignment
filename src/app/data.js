@@ -6,7 +6,7 @@ const data = [
   number : "416-186-8031",
   desc : "Cheap yet delicious chinese cuisine. Check our menu for our daily specials and weekly deals!",
   neighborhood: "Manhattan",
-  photo: "https://media-cdn.tripadvisor.com/media/photo-s/02/c8/2e/6f/pizza-place.jpg",
+  photo: "https://d2l4kn3pfhqw69.cloudfront.net/wp-content/uploads/2021/10/24preview_MIMIchinese_Gabriel_Li_GL1264_DiningRoom-1024x577.png",
   latlng: {
     lat: 40.713829,
     lng: -73.989667
