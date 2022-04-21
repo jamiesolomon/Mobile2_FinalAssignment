@@ -27,9 +27,35 @@
       <ion-card-subtitle class="sub-value">Friday: {{info.operating_hours.Friday}}</ion-card-subtitle>
       <ion-card-subtitle class="sub-value">Saturday: {{info.operating_hours.Saturday}}</ion-card-subtitle>
       <ion-card-subtitle class="sub-value">Sunday: {{info.operating_hours.Sunday}}</ion-card-subtitle>
+
       <div class="btnDiv">
-        
-        <button class="back" [routerLink]="['/home']" >Back</button>      </div>
+        <button class="back" [routerLink]="['/home']" >Back</button>
+      </div>
+
     </ion-card-content>
     </ion-card>
+    <ion-card class="body">
+    <ion-card-content class="content">
+      <ion-card-subtitle class="sub">Reviews</ion-card-subtitle>
+      <ion-card-subtitle class="sub-value">Name: {{info.review1.name}}</ion-card-subtitle>
+      <ion-card-subtitle class="sub-value">Date: {{info.review1.date}}</ion-card-subtitle>
+      <ion-card-subtitle class="sub-value">Rating: {{info.review1.rating}}</ion-card-subtitle>
+      <ion-card-subtitle class="sub-value">Comments: {{info.review1.comments}}</ion-card-subtitle>
+      <br>
+      <ion-card-subtitle class="sub-value">Name: {{info.review2.name}}</ion-card-subtitle>
+      <ion-card-subtitle class="sub-value">Date: {{info.review2.date}}</ion-card-subtitle>
+      <ion-card-subtitle class="sub-value">Rating: {{info.review2.rating}}</ion-card-subtitle>
+      <ion-card-subtitle class="sub-value">Comments: {{info.review2.comments}}</ion-card-subtitle>
+      <br>
+      <ion-card-subtitle class="sub-value">Name: {{info.review3.name}}</ion-card-subtitle>
+      <ion-card-subtitle class="sub-value">Date: {{info.review3.date}}</ion-card-subtitle>
+      <ion-card-subtitle class="sub-value">Rating: {{info.review3.rating}}</ion-card-subtitle>
+      <ion-card-subtitle class="sub-value">Comments: {{info.review3.comments}}</ion-card-subtitle>
+
+      <div class="btnDiv">
+        <button class="back" [routerLink]="['/home']" >Back</button>
+      </div>
+      
+  </ion-card-content>
+</ion-card>
 </ion-content>
