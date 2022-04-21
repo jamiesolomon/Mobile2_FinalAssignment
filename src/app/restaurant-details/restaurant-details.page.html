@@ -1,23 +1,35 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title>Detailed Restaurant View</ion-title>
+    <ion-title>{{info.name}}</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content class="content" [fullscreen]="true">
-  <button class="back" [routerLink]="['/home']" >Back</button>
-  <ion-card>
-  <div>
-     <div>
-       <img class="pic" src={{info.photo}}>
-       <h1 class="title">{{info.name}}</h1>
-       <p class="address">{{info.address}}</p>
-       <p class="phone">{{info.number}}</p>
-       <p class="desc">{{info.desc}}</p>
-       <p class="tags">Tags: {{info.cuisine_type}}</p>
-    </div>
-    <br>
+  <ion-icon class="icon" name="arrow-back-outline" [routerLink]="['/home']" size="large"></ion-icon>
 
-  </div>
-  </ion-card>
+  <ion-card class="body">
+    <img class="pic" src={{info.photo}}>
+    <ion-card-content class="content">
+      <ion-card-title class="header">{{info.name}}</ion-card-title>
+      <ion-card-subtitle class="sub">Address</ion-card-subtitle>
+      <ion-card-subtitle class="sub-value">{{info.address}}</ion-card-subtitle>
+      <ion-card-subtitle class="sub">Phone Number</ion-card-subtitle>
+      <ion-card-subtitle class="sub-value">{{info.number}}</ion-card-subtitle>
+      <ion-card-subtitle class="sub">Description</ion-card-subtitle>
+      <ion-card-subtitle class="sub-value">{{info.desc}}</ion-card-subtitle>
+      <ion-card-subtitle class="sub">Cuisine Type </ion-card-subtitle>
+      <ion-card-subtitle class="sub-value">{{info.cuisine_type}}</ion-card-subtitle>
+      <ion-card-subtitle class="sub">Opererating Hours</ion-card-subtitle>
+      <ion-card-subtitle class="sub-value">Monday: {{info.operating_hours.Monday}}</ion-card-subtitle>
+      <ion-card-subtitle class="sub-value">Tuesday: {{info.operating_hours.Tuesday}}</ion-card-subtitle>
+      <ion-card-subtitle class="sub-value">Wednesday: {{info.operating_hours.Wednesday}}</ion-card-subtitle>
+      <ion-card-subtitle class="sub-value">Thursday: {{info.operating_hours.Thursday}}</ion-card-subtitle>
+      <ion-card-subtitle class="sub-value">Friday: {{info.operating_hours.Friday}}</ion-card-subtitle>
+      <ion-card-subtitle class="sub-value">Saturday: {{info.operating_hours.Saturday}}</ion-card-subtitle>
+      <ion-card-subtitle class="sub-value">Sunday: {{info.operating_hours.Sunday}}</ion-card-subtitle>
+      <div class="btnDiv">
+        
+        <button class="back" [routerLink]="['/home']" >Back</button>      </div>
+    </ion-card-content>
+    </ion-card>
 </ion-content>

@@ -8,9 +8,9 @@
 h1{
     margin-top: 0%;
     font-size: 25px;
-    font-style: to-upper-case($string: "");
+    text-decoration:solid;
     background-color: orange;
-    padding: 10px;
+    padding: 12px;
     color: white;
     text-align: center;
 }
@@ -20,19 +20,38 @@ p{
 ion-content{
     color: white;
 }
-.tags{
-    font-style: italic;
-}
-.phone{
-    margin-top: 0%;
-}
-.address{
-    margin-bottom: 0%;
-}
-.desc{
-    font-size: 14px;
-}
+.body{
+    font-family: 'Nunito Sans', sans-serif;
+    margin-bottom: 2rem;
+  }
 .back{
-    padding: 5px 50px;
-    text-align: center;
+    background-color: orange;
+    padding: .7rem 2rem;
+    border-radius: 1.1rem;
+    font-size: .8rem;
+    color: white;
+    margin-top: 0;
+    float: right;
+    margin-bottom: 15px;
+  }
+.sub{
+    margin-top: .6rem;
+    font-weight: bold;
+    text-decoration: underline;
+}
+
+.sub-value{
+    margin-top: 0;
+    margin-bottom: .6rem;
+}
+.header{
+    font-weight: bold;
+    font-size: 1.5rem;
+}
+.icon{
+    padding: 1rem;
+}
+
+ion-card{
+    margin-top: 0%;
 }
