@@ -4,6 +4,15 @@
   </ion-toolbar>
 </ion-header>
 <ion-content>
+  <ion-item>
+    <ion-label position="floating">Enter Starting Location</ion-label>
+    <ion-input [(ngModel)]="source"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label position="floating">Enter Restaurant Location</ion-label>
+    <ion-input [(ngModel)]="destination"></ion-input>
+  </ion-item>
+  <ion-button expand="full" (click)="onPress($event)">Search</ion-button>
   <ion-card>
     <div #mapContainer class="map"></div>
     <ion-card-header>
